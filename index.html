@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel='stylesheet' />
   <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
 </head>
+
 <body>
   <!-- Write your code here! -->
+  <header>
+    <img class="header-logo" src="https://shield-health.s3-us-west-2.amazonaws.com/quixi_logo_no_text_white.png"
+      alt='Site Logo' />
+    <h1 class="header-title">Quixi</h1>
+
+  </header>
+  <div class="container">
+    <div class="canvas-container">
+      <canvas id='signature-pad' class="signature-pad"></canvas>
+      <h2 class='canvas-caption'>Please provide your signature</h2>
+    </div>
+    <form onsubmit="event.preventDefault(); validateForm();" id='quixi-form' class="quixi-form"
+      action='https://www.quixi.com/signature_pad' method="POST">
+      <label for='colors'>Choose a color:</label>
+      <select name='colors' required>
+        <option value="" selected disabled hidden>Color</option>
+        <option value='Red'>Red</option>
+        <option value='Blue'>Blue</option>
+        <option value='Green'>Green</option>
+      </select>
+      </br>
+      <label for='name'>Name:</label>
+      <input name='name' required type="text" placeholder='Your name'></input>
+      </br>
+      <button class="submit-button" type="submit"><i class="fa fa-send-o" style='color:white'></i></button>
+    </form>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>
